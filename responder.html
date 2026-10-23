@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAHAAYA responder</title>
+<style>
+  body{font:16px system-ui,sans-serif;max-width:560px;margin:30px auto;padding:0 16px;color:#1B2B34}
+  button,input{font:inherit;padding:10px 14px;border-radius:10px;border:1px solid #ccd;margin:4px 0}
+  button{background:#2A7F80;color:#fff;border:0;cursor:pointer}
+  #log{height:300px;overflow-y:auto;border:1px solid #ccd;border-radius:12px;padding:12px;margin:12px 0}
+  .me{text-align:right;color:#1F6162}.sys{text-align:center;color:#777;font-size:14px}
+</style></head><body>
+<h2>SAHAAYA responder</h2>
+<div id="login"><input id="key" type="password" placeholder="Responder key"> <button id="go">Sign in</button></div>
+<div id="app" hidden>
+  <h3>Waiting</h3><div id="queue">Nobody waiting.</div>
+  <div id="log"></div>
+  <input id="txt" placeholder="Type a reply" style="width:60%"> <button id="send">Send</button>
+  <button class="stk" data-t="[star]">★</button><button class="stk" data-t="[heart]">♥</button><button class="stk" data-t="[sun]">☀</button>
+</div>
+<script>
+const WS_URL=location.protocol==='file:'?'ws://localhost:8080':(location.protocol==='https:'?'wss://':'ws://')+location.host;
+let s; const $=id=>document.getElementById(id);
+const add=(t,c)=>{const d=document.createElement('div');d.className=c;d.textContent=({'[star]':'★','[heart]':'♥','[sun]':'☀'})[t]||t;$('log').appendChild(d);$('log').scrollTop=1e9;};
+$('go').onclick=()=>{
+  s=new WebSocket(WS_URL);
+  s.onopen=()=>s.send(JSON.stringify({type:'hello',role:'responder',key:$('key').value}));
+  s.onmessage=e=>{const m=JSON.parse(e.data);
+    if(m.type==='ok'){$('login').hidden=true;$('app').hidden=false;}
+    if(m.type==='queue'){$('queue').innerHTML='';
+      m.waiting.forEach(id=>{const b=document.createElement('button');b.textContent='Join '+id;b.onclick=()=>s.send(JSON.stringify({type:'join',id}));$('queue').appendChild(b);});
+      if(!m.waiting.length)$('queue').textContent='Nobody waiting.';}
+    if(m.type==='connected'){$('log').innerHTML='';add('Connected to '+m.id,'sys');}
+    if(m.type==='msg')add(m.text,'them');
+    if(m.type==='ended')add('They left the chat.','sys');};
+};
+$('send').onclick=()=>{const t=$('txt').value.trim();if(!t)return;s.send(JSON.stringify({type:'msg',text:t}));add(t,'me');$('txt').value='';};
+document.querySelectorAll('.stk').forEach(b=>b.onclick=()=>{s.send(JSON.stringify({type:'msg',text:b.dataset.t}));add(b.dataset.t,'me');});
+</script></body></html>

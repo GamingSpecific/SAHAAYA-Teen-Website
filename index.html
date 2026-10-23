@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAHAAYA - a safe place to start</title>
+<meta name="description" content="SAHAAYA is a teen-led mental health initiative: a safe place to start.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <!-- replace the .logo box with <img src="logo.png" alt="SAHAAYA logo" height="42"> -->
+  <div class="logo" aria-hidden="true">S</div>
+  <div class="brand">SAHAAYA</div>
+  <nav aria-label="Main">
+    <a href="#about">About us</a>
+    <a href="#solutions">Simple solutions</a>
+    <a href="#chat-section">Chat with us</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="hand">you're safe here</span>
+      <h1>Come in, sit down, take your time.</h1>
+      <p class="lead">SAHAAYA is a quiet place to start, made by teens, for teens.</p>
+    </div>
+    <div class="art">
+    <svg class="doodle d1" viewBox="0 0 40 40" width="40" aria-hidden="true"><path d="M20 34C6 24 4 14 11 10c4-2 8 0 9 4 1-4 5-6 9-4 7 4 5 14-9 24z" fill="none" stroke="#A5533B" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    <svg class="doodle d2" viewBox="0 0 40 40" width="34" aria-hidden="true"><path d="M20 4l4 11 12 1-9 8 3 12-10-7-10 7 3-12-9-8 12-1z" fill="#F7E3B5" stroke="#A5533B" stroke-width="2" stroke-linejoin="round"/></svg>
+    <svg class="doodle d3" viewBox="0 0 40 40" width="38" aria-hidden="true"><path d="M6 34C6 14 18 6 34 6c0 16-8 28-28 28z" fill="#7E9A7B" stroke="#5F7C5C" stroke-width="2" stroke-linejoin="round"/><path d="M6 34L24 16" stroke="#5F7C5C" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="main-art" viewBox="0 0 360 300" role="img" aria-label="A cosy window at night with a plant and a warm mug">
+      <path d="M70 262V118a110 110 0 0 1 220 0v144z" fill="#FFE9B8" stroke="#8A6A55" stroke-width="8"/>
+      <circle cx="205" cy="105" r="22" fill="#FFF8DE"/>
+      <circle cx="205" cy="105" r="22" fill="#FFE9B8" transform="translate(9 -5)"/>
+      <circle cx="130" cy="92" r="2.5" fill="#fff"/><circle cx="160" cy="140" r="2" fill="#fff"/><circle cx="240" cy="160" r="2.5" fill="#fff"/>
+      <path d="M180 8v254M70 150h220" stroke="#8A6A55" stroke-width="6"/>
+      <path d="M62 262V110c0 70 22 100 42 150z" fill="#E9B8A5"/>
+      <path d="M298 262V110c0 70-22 100-42 150z" fill="#E9B8A5"/>
+      <rect x="50" y="262" width="260" height="16" rx="6" fill="#8A6A55"/>
+      <path d="M212 262l6-34h38l6 34z" fill="#A5533B"/>
+      <ellipse cx="226" cy="214" rx="9" ry="22" fill="#5F7C5C" transform="rotate(-25 226 214)"/>
+      <ellipse cx="248" cy="212" rx="9" ry="24" fill="#7E9A7B" transform="rotate(22 248 212)"/>
+      <ellipse cx="237" cy="204" rx="8" ry="26" fill="#5F7C5C"/>
+      <rect x="102" y="236" width="38" height="26" rx="8" fill="#F8E6D6" stroke="#8A6A55" stroke-width="4"/>
+      <path d="M140 242c14 0 14 16 0 16" fill="none" stroke="#8A6A55" stroke-width="4"/>
+      <g class="steam" fill="none" stroke="#8A6A55" stroke-width="3" stroke-linecap="round">
+        <path d="M113 228c-6-8 6-12 0-20"/><path d="M127 228c-6-8 6-12 0-20"/>
+      </g>
+    </svg>
+    </div>
+  </div>
+</div>
+
+<section class="checkin" id="checkin">
+  <div class="wrap narrow">
+    <span class="hand kicker">just checking in</span>
+    <h2>How are you feeling today?</h2>
+    <div class="chips" style="margin-top:18px">
+      <button class="chip mood" data-m="stressed">Stressed</button>
+      <button class="chip mood" data-m="lonely">Lonely</button>
+      <button class="chip mood" data-m="overwhelmed">Overwhelmed</button>
+      <button class="chip mood" data-m="angry">Angry</button>
+      <button class="chip mood" data-m="low">Really low</button>
+    </div>
+    <div class="mood-reply" id="moodReply" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap narrow">
+    <span class="hand kicker">hi there</span>
+    <h2>About us</h2>
+    <p style="margin-top:18px">SAHAAYA is a teen-led mental health initiative built on a simple belief: sometimes, people don't need someone to fix everything. They just need a safe place to start.</p>
+    <p>As teenagers, we understand how difficult it can be to talk about what we're going through. Academic pressure, friendships, family expectations, loneliness, social media, and simply trying to figure yourself out can sometimes feel like a lot. Yet asking for help can feel even harder.</p>
+    <p><strong>SAHAAYA was created to make that first step a little easier.</strong></p>
+    <p>We aim to provide accessible, age-appropriate information, practical tools, conversation starters, and pathways to reliable professional support, all in one safe and welcoming space.</p>
+    <p>We don't want to speak for teenagers. We want to create something with them.</p>
+    <p>SAHAAYA is not a replacement for professional mental-health care, and we don't ask you to share your personal story with us. Our goal is simple: help you understand, help you find the words, and help you find the right support.</p>
+    <!-- You can personalise this note with your names and school if you like -->
+    <div class="note"><p>Hi, we're a group of students who know how hard it can be to start talking. We made SAHAAYA so that first step feels a little easier. Take your time. We're really glad you're here.</p></div>
+  </div>
+</section>
+
+<section class="s-peach" id="solutions">
+  <div class="wrap narrow">
+    <span class="hand kicker">small things that help</span>
+    <h2>Simple solutions</h2>
+    <p style="color:var(--muted)">You don't have to fix everything today. Start with something small.</p>
+    <div class="sol">
+      <div class="box">
+        <h3>Take a few slow breaths</h3>
+        <p>Breathe in as the circle grows, out as it shrinks. Stop whenever you like.</p>
+        <div class="breathe">
+          <div class="orb-wrap"><div class="orb" id="orb"></div></div>
+          <div>
+            <button class="btn" id="breathBtn">Start breathing</button>
+            <div id="breathLabel" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Talk to your friends or family</h3>
+        <p>You don't need perfect words. Someone close to you would want to know. Tap a line to copy it, then send it to a person you trust.</p>
+        <div class="chips">
+          <button class="chip">I've been feeling really stressed about exams</button>
+          <button class="chip">I feel alone lately</button>
+          <button class="chip">I don't know how to tell you this, but I need to talk</button>
+          <button class="chip">I can't stop overthinking</button>
+          <button class="chip">Things with my friends feel off</button>
+          <button class="chip">I just need someone to listen</button>
+        </div>
+        <div id="toast" aria-live="polite"></div>
+      </div>
+      <div class="grid2">
+        <div class="box">
+          <h3>Little things for today</h3>
+          <span class="hand">tick what you can</span>
+          <ul class="todo">
+            <li><label><input type="checkbox"><span>Drink a glass of water</span></label></li>
+            <li><label><input type="checkbox"><span>Open a window or step outside</span></label></li>
+            <li><label><input type="checkbox"><span>Stretch for a minute</span></label></li>
+            <li><label><input type="checkbox"><span>Eat something you enjoy</span></label></li>
+            <li><label><input type="checkbox"><span>Text someone you like</span></label></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>A gentle word</h3>
+          <p class="quote" id="quote" aria-live="polite">You don't have to have it all figured out today.</p>
+          <button class="btn small" id="nextQuote" type="button">Another one</button>
+        </div>
+      </div>
+    </div>
+    <div class="chat-link">
+      <span style="color:var(--muted)">Want to talk to someone here instead?</span>
+      <a class="btn small" href="#chat-section">Chat with us</a>
+    </div>
+  </div>
+</section>
+
+<section class="s-sage" id="chat-section">
+  <div class="wrap narrow lamp-wrap">
+    <svg class="lamp" viewBox="0 0 80 100" width="76" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#FFE9B8" opacity=".6"/><path d="M18 14h44l10 30H8z" fill="#F7E3B5" stroke="#8A6A55" stroke-width="3" stroke-linejoin="round"/><path d="M40 44v38" stroke="#8A6A55" stroke-width="4"/><ellipse cx="40" cy="88" rx="18" ry="6" fill="#8A6A55"/></svg>
+    <span class="hand kicker">no names, no pressure</span>
+    <h2>Chat with us</h2>
+    <div class="chat-intro">
+      <p>This chat is anonymous. No account, no real name. Say as much or as little as you want, and leave whenever you like.</p>
+      <button class="btn" id="startChat">Start chatting</button>
+      <p class="fine">If you're in immediate danger, please contact your local emergency services.</p>
+    </div>
+
+    <div id="chat" aria-label="Anonymous chat">
+      <div class="chat-head">
+        <div><strong>Anonymous chat</strong><br><span id="alias"></span></div>
+        <button class="leave" id="leaveChat">Leave chat</button>
+      </div>
+      <div id="messages" role="log" aria-live="polite"></div>
+      <div class="stickers" id="stickers" aria-label="Send a sticker"></div>
+      <form class="composer" id="composer">
+        <input id="input" type="text" placeholder="Type here..." autocomplete="off" aria-label="Your message" maxlength="1000">
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="hand" style="font-size:24px">made with care, by students</span><br>SAHAAYA is not a substitute for emergency or medical care. Nothing you type here is linked to your name.
+</footer>
+
+<script>
+  const chat = document.getElementById('chat');
+  const box = document.getElementById('messages');
+  const input = document.getElementById('input');
+  const alias = document.getElementById('alias');
+
+  const ICONS = {
+    star: '<svg viewBox="0 0 40 40" width="44" aria-label="star"><path d="M20 4l4 11 12 1-9 8 3 12-10-7-10 7 3-12-9-8 12-1z" fill="#F2B84B" stroke="#A5533B" stroke-width="2" stroke-linejoin="round"/></svg>',
+    heart: '<svg viewBox="0 0 40 40" width="44" aria-label="heart"><path d="M20 34C6 24 4 14 11 10c4-2 8 0 9 4 1-4 5-6 9-4 7 4 5 14-9 24z" fill="#E58F86" stroke="#A5533B" stroke-width="2" stroke-linejoin="round"/></svg>',
+    sun: '<svg viewBox="0 0 40 40" width="44" aria-label="sun"><circle cx="20" cy="20" r="8" fill="#F2B84B" stroke="#A5533B" stroke-width="2"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M9 9l4 4M27 27l4 4M31 9l-4 4M13 27l-4 4" stroke="#A5533B" stroke-width="2.5" stroke-linecap="round"/></svg>'
+  };
+  const stickerBar = document.getElementById('stickers');
+  Object.keys(ICONS).forEach(k => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'stk'; b.setAttribute('aria-label', 'Send a ' + k);
+    b.innerHTML = ICONS[k];
+    b.addEventListener('click', () => { addMsg('[' + k + ']', 'me'); sendMessage('[' + k + ']'); });
+    stickerBar.appendChild(b);
+  });
+
+  function addMsg(text, who) {
+    const d = document.createElement('div');
+    d.className = 'msg ' + who;
+    const tok = /^\[(star|heart|sun)\]$/.exec(text);
+    if (tok) { d.classList.add('sticker'); d.innerHTML = ICONS[tok[1]]; }   // fixed icons only
+    else { d.textContent = text; }  // textContent so nobody can inject code
+    box.appendChild(d);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  document.getElementById('startChat').addEventListener('click', () => {
+    chat.classList.add('open');
+    box.innerHTML = '';
+    alias.textContent = 'You are Guest-' + Math.floor(1000 + Math.random() * 9000);
+    addMsg('You are anonymous here. Take your time.', 'sys');
+    connectToBackend();
+    chat.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    input.focus();
+  });
+
+  document.getElementById('leaveChat').addEventListener('click', () => {
+    chat.classList.remove('open');
+    box.innerHTML = '';
+    disconnect();
+  });
+
+  document.getElementById('composer').addEventListener('submit', e => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'me');
+    sendMessage(text);
+    input.value = '';
+  });
+
+  /* conversation starters: copy the line so it can be sent to someone */
+  const toast = document.getElementById('toast');
+  document.querySelectorAll('.chips .chip:not(.mood)').forEach(c => c.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(c.textContent); toast.textContent = 'Copied. Paste it into a message to someone you trust.'; }
+    catch (e) { toast.textContent = 'Say it your way. This line is just a place to start.'; }
+  }));
+
+  /* breathing */
+  const orb = document.getElementById('orb');
+  const label = document.getElementById('breathLabel');
+  const bBtn = document.getElementById('breathBtn');
+  let timer = null, inhale = false;
+  function tick() {
+    inhale = !inhale;
+    orb.classList.toggle('in', inhale);
+    label.textContent = inhale ? 'Breathe in...' : 'Breathe out...';
+  }
+  bBtn.addEventListener('click', () => {
+    if (timer) {
+      clearInterval(timer); timer = null; inhale = false;
+      orb.classList.remove('in'); label.textContent = '';
+      bBtn.textContent = 'Start breathing';
+    } else {
+      tick(); timer = setInterval(tick, 4000);
+      bBtn.textContent = 'Stop';
+    }
+  });
+
+  /* mood check-in */
+  const moods = {
+    stressed: ['That sounds like a lot. A few slow breaths can help, and it can help even more to tell someone how heavy it has been.', 'Try breathing', '#solutions'],
+    lonely: ['Feeling lonely is really common, even when people are around. Sending a message to one person you trust can be a small start.', 'Find the words', '#solutions'],
+    overwhelmed: ['When everything piles up, pick just one tiny thing for now. The little-things list can be a gentle place to begin.', 'See little things', '#solutions'],
+    angry: ['Anger is a feeling too, and it is allowed. Slow breaths can help it settle before you talk to anyone.', 'Try breathing', '#solutions'],
+    low: ["Thank you for being honest about that. You don't have to handle it alone. Please talk to someone you trust, like a parent, a teacher or a counsellor. You can chat with us too. If you're in immediate danger, please contact your local emergency services.", 'Chat with us', '#chat-section']
+  };
+  const reply = document.getElementById('moodReply');
+  document.querySelectorAll('.mood').forEach(b => b.addEventListener('click', () => {
+    const [text, linkText, href] = moods[b.dataset.m];
+    reply.textContent = text + ' ';
+    const a = document.createElement('a');
+    a.href = href; a.textContent = linkText;
+    reply.appendChild(a);
+  }));
+
+  /* gentle words */
+  const words = [
+    "You don't have to have it all figured out today.",
+    "Asking for help is a strong thing to do, not a weak one.",
+    "Feeling this way doesn't make you a burden.",
+    "Small steps still count.",
+    "You're allowed to rest.",
+    "Whatever you're feeling is allowed to be there.",
+    "You're not the only one who feels this way."
+  ];
+  let wi = 0;
+  document.getElementById('nextQuote').addEventListener('click', () => {
+    wi = (wi + 1) % words.length;
+    document.getElementById('quote').textContent = words[wi];
+  });
+
+  /* ------------------------------------------------------------------
+     BACKEND HOOKS - this is demo mode. chat-live.js (loaded below)
+     replaces these with the real connection when server.js is running.
+     ------------------------------------------------------------------ */
+  function connectToBackend() {
+    addMsg('Demo mode: chat is not connected to a real person yet.', 'sys');
+  }
+  function sendMessage(text) { /* replaced by chat-live.js */ }
+  function disconnect() { /* replaced by chat-live.js */ }
+</script>
+<script src="chat-live.js"></script>
+</body>
+</html>
